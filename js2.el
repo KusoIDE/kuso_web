@@ -13,19 +13,12 @@
 ;;
 ;;    You should have received a copy of the GNU General Public License
 ;;    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-(message "Initializing 'kuso-web' plugin.")
 
-;(autoload 'tern-mode "tern.el" nil t)
-
-(add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-;(add-hook 'js-mode-hook (lambda () (tern-mode t)))
-;(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
-
-;(eval-after-load 'tern
-;   '(progn
-;      (require 'tern-auto-complete)
-;      (tern-ac-setup)))
+(require 'js2-mode)
+(defun insert-semicolon ()
+  "Insert semicolon at the end of line"
+  (interactive)
+  (save-excursion (end-of-line) (insert ?\;)))
 
 
-(load-file (concat default-directory "js2.el"))
+(define-key js2-mode-map (kbd "C-;") 'insert-semicolon)
