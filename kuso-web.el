@@ -18,6 +18,7 @@
 ;(autoload 'tern-mode "tern.el" nil t)
 
 (require 'web-mode)
+
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
@@ -29,11 +30,13 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 ;; Set web-mode indent
-(defun web-mode-hook ()
+(defun web-mode-hook-fun ()
   "Hooks for Web mode."
   (setq web-mode-markup-indent-offset 2)
 )
-(add-hook 'web-mode-hook  'web-mode-hook)
+
+(add-hook 'web-mode-hook  'web-mode-hook-func)
+(add-hook 'web-mode-hook  'emmet-mode)
 
 (add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
