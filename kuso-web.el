@@ -30,16 +30,16 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 ;; Set web-mode indent
-(defun web-mode-hook-fun ()
+(defun web-mode-hook ()
   "Hooks for Web mode."
   (setq web-mode-markup-indent-offset 2)
 )
 
-(add-hook 'web-mode-hook  'web-mode-hook-func)
+(add-hook 'web-mode-hook  'web-mode-hook)
 (add-hook 'web-mode-hook  'emmet-mode)
 
-(add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js.erb$" . js3-mode))
+(add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
 ;(add-hook 'js-mode-hook (lambda () (tern-mode t)))
 ;(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
@@ -49,4 +49,4 @@
 ;      (tern-ac-setup)))
 
 
-(load-file (concat default-directory "js2.el"))
+;(load-file (concat default-directory "js2.el"))
