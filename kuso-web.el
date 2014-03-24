@@ -41,6 +41,11 @@
 
 (add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+;; Scss support
+(add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
+(setq scss-compile-at-save nil)
+
 ;(add-hook 'js-mode-hook (lambda () (tern-mode t)))
 ;(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
