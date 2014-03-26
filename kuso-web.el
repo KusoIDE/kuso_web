@@ -35,8 +35,22 @@
   (setq web-mode-markup-indent-offset 2)
 )
 
+(defun activate-modes ()
+  "Activate necessary modes"
+  (rainbow-mode t)
+  (flyspell-prog-mode)
+  (flycheck-mode t)
+  )
+
 (add-hook 'web-mode-hook  'web-mode-hook-func)
 (add-hook 'web-mode-hook  'emmet-mode)
+(add-hook 'css-mode-hook 'activate-modes)
+(add-hook 'scss-mode-hook 'activate-modes)
+(add-hook 'sass-mode-hook 'activate-modes)
+(add-hook 'web-mode-hook 'activate-modes)
+(add-hook 'js2-mode-hook 'activate-modes)
+
+
 ;(define-key web-mode-map "<tab>" 'yas-expand)
 
 (add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode))
